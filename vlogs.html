@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <link
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style2.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>Trésor Kasongo || Videographer</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+      $(window).on("scroll", function () {
+        if ($(window).scrollTop()) {
+          $("nav").addClass("black");
+          $("#navbar-logo").attr("src", "images/logo-white.png");
+        } else {
+          $("nav").removeClass("black");
+          $("#navbar-logo").attr("src", "images/logo.png");
+        }
+      });
+
+      $(document).ready(function () {
+        $(".menu h4").click(function () {
+          $("nav ul").toggleClass("active");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="responsive-bar">
+      <div class="logo" style="z-index: 100">
+        <img src="images/logo-white.png" alt="logo" style="z-index: 100" />
+      </div>
+      <div class="menu">
+        <h4>Menu</h4>
+      </div>
+    </div>
+
+    <nav>
+      <a class="logo" href="/">
+        <img src="images/logo-white.png" alt="logo" id="navbar-logo" />
+      </a>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+
+    <section class="sec1">
+        <video autoplay muted loop poster="video/poster.jpg" id="video-bg">
+          <source src="videos/VLOG2.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <div class="video-overlay"></div>
+        <!-- <div class="centered-content">
+          <h1>Trésor Kasongo - Videographer</h1>
+          <p>
+            As a skilled videographer, I capture life's moments through a
+            cinematic lens, creating engaging and visually stunning content that
+            tells compelling stories and leaves a lasting impact.
+          </p>
+        </div> -->
+      </section>
+
+    <section class="mt-5 container">
+        <h1 class="text-center">VLOGS</h1>
+        <div class="d-flex justify-content-center align-items-center mt-4">
+          <div class="row">
+            <div class="col-md-6">
+              <video
+                src="videos/VLOG2.mp4"
+                style="width: 100%"
+                controls
+              ></video>
+            </div>
+            <div class="col-md-6">
+              <video
+                src="videos/VLOG2.mp4"
+                style="width: 100%"
+                controls
+              ></video>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+    <section class="end mt-5">
+      <img src="images/end.png" style="width: 30%" alt="" />
+    </section>
+  </body>
+</html>

@@ -1,0 +1,272 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.responsive-bar {
+  display: none;
+}
+
+a:hover{
+    text-decoration: none !important;
+}
+
+nav {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100px;
+  padding: 10px 100px; /* Keep consistent padding */
+  box-sizing: border-box;
+  transition: 0.5s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+}
+
+nav.black {
+  background: rgba(0, 0, 0, 0.8);
+  height: 80px;
+  padding: 10px 100px; /* Keep consistent padding */
+}
+
+nav .logo {
+  height: 100%;
+}
+
+nav .logo img {
+  height: 40px;
+  transition: 0.5s;
+  margin-top: 10px;
+}
+
+nav.black .logo img {
+  content: url("images/logo-white.png"); /* Change to white logo image */
+  height: 40px; /* Ensure this matches the height of your white logo */
+}
+
+nav > ul {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0;
+  padding: 0;
+}
+
+nav > ul > li {
+  list-style: none;
+  margin-left: 20px; /* Add some space between links */
+}
+
+nav > ul > li > a:hover {
+  color: #777;
+}
+
+nav > ul > li > a {
+  color: #262626;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 80px;
+  padding: 5px 20px;
+  transition: 0.5s;
+  color: white;
+}
+
+nav.black > ul > li > a {
+  color: #fff;
+  line-height: 60px;
+}
+
+section.sec1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity as needed */
+}
+
+.centered-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 1; /* Ensures the content is above the video and overlay */
+}
+
+.centered-content h1 {
+  font-size: 2.5em;
+  margin: 0.5em 0;
+}
+
+.centered-content p {
+  font-size: 1em;
+  max-width: 600px;
+}
+
+.image-container {
+  position: relative;
+  width: 60%; /* Adjust width as needed */
+  cursor: pointer;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.vlog-image {
+  width: 100%;
+  height: auto; /* Ensures image proportions are maintained */
+  transition: transform 0.6s ease;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0; /* Show overlay from the bottom */
+  left: 0;
+  width: 100%;
+  height: 0; /* Start with zero height */
+  background-color: rgba(0, 0, 0, 0.6); /* Adjust opacity as needed */
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Align text to the bottom */
+  overflow: hidden; /* Hide overflow content */
+  transition: height 0.6s ease, opacity 0.6s ease; /* Transition height and opacity */
+}
+
+.overlay-text {
+  color: white;
+  font-size: 18px;
+  text-align: center;
+  margin-bottom: 20px; /* Space between text and bottom */
+  opacity: 0; /* Start with zero opacity */
+  transition: opacity 0.6s ease; /* Transition opacity */
+}
+
+.image-container:hover .overlay {
+  height: 100%; /* Expand overlay to full height on hover */
+}
+
+.image-container:hover .overlay-text {
+  opacity: 1; /* Fade in text on hover */
+}
+
+.end{
+    display: flex;
+    background-color: #222;
+    padding: 60px;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 668px) {
+  /* .responsive-bar {
+      display: block;
+      width: 100%;
+      height: 80px;
+      background: #262626;
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 5px 20px;
+      box-sizing: border-box;
+      z-index: 100;
+    } */
+
+  .responsive-bar .logo img {
+    float: left;
+    height: 50px;
+    position: absolute;
+  }
+
+  .responsive-bar .menu h4 {
+    float: right;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    line-height: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+  }
+
+  nav {
+    padding: 0;
+  }
+
+  nav,
+  nav.black {
+    background: #262626;
+    height: 60px;
+    padding: 0;
+  }
+
+  nav .logo img {
+    width: 180px;
+    margin-left: 20px;
+  }
+
+  nav ul {
+    position: absolute;
+    width: 100%;
+    top: 60px;
+    left: 0;
+    background: #262626;
+    float: none;
+    display: none;
+  }
+
+  nav ul.active {
+    display: block;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    line-height: 30px !important;
+    color: #fff;
+  }
+
+  nav > ul {
+    width: 100%;
+    display: none;
+  }
+
+  nav > ul > li {
+    display: block;
+    text-align: center;
+  }
+
+  .centered-content h1 {
+    font-size: 1.5em;
+  }
+
+  .centered-content p {
+    font-size: 0.8em;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
